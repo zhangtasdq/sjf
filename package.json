@@ -1,0 +1,26 @@
+{
+  "name": "sjf",
+  "version": "0.0.1-dev",
+  "description": "simple javascript framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.oschina.net:syjefbz/sjf.git"
+  },
+  "keywords": [
+    "javascript",
+    "framework"
+  ],
+  "author": "zhang",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha": "^0.4.15"
+  }
+}
