@@ -7,7 +7,16 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON("package.json"),
 
         jshint: {
-            files: ["lib/*.js"]
+            options: {
+                jshintrc: true,
+                reporter: require("jshint-stylish")
+            },
+
+            check: {
+                files: {
+                    src: ["lib/**/*.js"]
+                }
+            }
         },
 
         concat: {
@@ -64,8 +73,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-mocha");
 
-    grunt.registerTask("default", ["jshint", "mocha:test", "concat:dist", "uglify:compress"]);
-    grunt.registerTask("compile", ["jshint", "concat:dist", "uglify:compress"]);
-    grunt.registerTask("develop", ["watch:develop"]);
     grunt.registerTask("test", ["mocha:test"]);
+    grunt.registerTask("compile", ["jshint:check", "mocha:test", "concat:dist", "uglify:compress"]);
+    grunt.registerTask("default", ["compile"]);
+    grunt.registerTask("develop", ["watch:develop"]);
 };

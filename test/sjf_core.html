@@ -15,10 +15,13 @@
         </script>
         <script src="../bower_components/chai/chai.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
-            var expect = chai.expect;
+            var expect = chai.expect,
+                should = chai.should();
         </script>
 
-        <script src="./spec/testSpec.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../lib/sjf.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="./spec/coreSpec.js" type="text/javascript" charset="utf-8"></script>
 
         <script type="text/javascript" charset="utf-8">
             if (navigator.userAgent.indexOf('PhantomJS') < 0) {

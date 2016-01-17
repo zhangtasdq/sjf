@@ -32,6 +32,7 @@
         "it",
         "before",
         "after",
-        "expect"
+        "expect",
+        "should"
     ]
 }
