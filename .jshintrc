@@ -33,6 +33,7 @@
         "before",
         "after",
         "expect",
-        "should"
+        "should",
+        "beforeEach"
     ]
 }
