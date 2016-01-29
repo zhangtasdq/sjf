@@ -34,6 +34,8 @@
         "after",
         "expect",
         "should",
-        "beforeEach"
+        "beforeEach",
+        "afterEach",
+        "sinon"
     ]
 }
