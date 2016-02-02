@@ -14,6 +14,7 @@ describe("事件测试", function() {
         expect(SJF.Event).to.be.an("object");
     });
 
+
     describe("事件监听", function() {
         var eventObj = null;
 
@@ -127,7 +128,10 @@ describe("事件测试", function() {
             spyTwo = null;
 
         beforeEach(function() {
+            eventObj = null;
             eventObj = new TestEvent();
+            listenerOne = function() {},
+            listenerTwo = function() {},
             spyOne = sinon.spy(listenerOne);
             spyTwo = sinon.spy(listenerTwo);
             eventObj.on(eventName, spyOne);
@@ -146,7 +150,9 @@ describe("事件测试", function() {
             eventObj.off(eventName, spyTwo);
             eventObj.trigger(eventName);
             expect(spyOne.calledOnce).to.be.true;
+            expect(spyTwo.called).to.be.false;
         });
+
     });
 
 });
