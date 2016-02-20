@@ -1,0 +1,28 @@
+{
+  "name": "sjf",
+  "description": "simple javascript framework",
+  "main": "index.js",
+  "authors": [
+    "zhang"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "javascript",
+    "framework"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mocha": "~2.3.4",
+    "chai": "~3.4.2",
+    "sinonjs": "~1.17.1"
+  }
+}

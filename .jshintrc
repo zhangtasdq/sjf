@@ -1,0 +1,41 @@
+{
+    "devel"           : true,  // 使用 alert, console
+    "jquery"          : true,  // 加载 jQuery 的全局变量（jQuery、$）
+    "camelcase"       : true,  // 强制使用驼峰命名
+    "curly"           : true,  // 强制使用花括号
+    "eqeqeq"          : true,  // 禁止使用 !=, ==
+    "indent"          : 4,     // 强制缩进 4 个空格
+    "noarg"           : true,  // 禁止使用 arguments.caller
+    "noempty"         : true,  // 警告有空的块
+    "undef"           : true,  // 变量必需申明后使用
+    "unused"          : true,  // 警告变量未使用
+    "strict"          : true,  // 使用严格模式
+    "maxlen"          : 100,   // 每行最大长度
+    "evil"            : false, // 警告使用 eval
+    "globalstrict"    : false, // 警告全局使用严格模式
+    "loopfunc"        : false, // 警告在循环中声明函数
+    "notypeof"        : false, // 警告 typeof 的比较不正确，如 typeof a === "funion" 应该为 "function"
+    "sub"             : false, // 警告当可以使用 person.name 时 使用 person['name']
+    "shadow"          : false, // 警告当声明的变量已经被声明
+    "smarttabs"       : false, // 警告当混合使用 tab 和 space
+    "proto"           : false, // 警告当使用 __proto__
+    "multistr"        : false, // 警告当多行字符串连接时使用换行符后有空格
+    "laxbreak"        : false, // 警告当使用不正确的换行
+    "laxcomma"        : false, // 警告当使用对象字面时，逗号放到第二行开头
+    "maxstatements"   : 15,    // 每个函数最多 15 行代码
+    "node"            : true,
+    "browser"         : true,
+
+    "predef": [
+        "SJF",                    // 使用 underscore 全局变量 _
+        "describe",
+        "it",
+        "before",
+        "after",
+        "expect",
+        "should",
+        "beforeEach",
+        "afterEach",
+        "sinon"
+    ]
+}
