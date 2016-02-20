@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 
         concat: {
             dist: {
-                src: ["lib/sjf.js", "lib/sjf_module.js", "lib/sjf_event.js"],
+                src: ["lib/sjf.js", "lib/sjf_module.js", "lib/sjf_util.js", "lib/sjf_event.js"],
                 dest: "dist/sjf.js",
                 options: {
                     banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
