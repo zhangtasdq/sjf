@@ -1,4 +1,4 @@
-/*! sjf - v0.0.1-dev - 2016-01-29 */
+/*! sjf - v0.0.1-dev - 2016-02-20 */
 (function(global) {
     "use strict";
 
@@ -72,7 +72,8 @@
 (function (SJF) {
     "use strict";
 
-    var Event = SJF.namespace("Event");
+    var Event = SJF.namespace("Event"),
+        Util = SJF.namespace("Util");
 
     Event.on = function(eventName, callback, context, extraArg) {
         if (!eventName || !callback) {
@@ -88,12 +89,6 @@
             context = null;
         }
 
-        if (arguments.length < 4) {
-            extraArg = [];
-        } else {
-            extraArg = Array.prototype.slice.call(arguments, 3);
-        }
-
         this.__listener[eventName].push({
             name: eventName,
             fn: callback,
@@ -102,25 +97,21 @@
         });
     };
 
-    Event.__called = function(callback, context, args) {
-        var calledContext = context || callback.context;
-        args = callback.args.concat(args);
-        callback.fn.apply(calledContext, args);
-    };
 
     Event.trigger = function(eventName, context, args) {
         if (!eventName || !this.__listener || !this.__listener[eventName]) {
             return;
         }
-        if (arguments.length < 3) {
-            args = [];
-        } else {
-            args = Array.prototype.slice.call(arguments, 2);
-        }
         var callbacks = this.__listener[eventName];
         for(var i = 0; i < callbacks.length; i++) {
             this.__called(callbacks[i], context, args);
         }
+    };
+
+    Event.__called = function(callback, context, args) {
+        var calledContext = context || callback.context;
+        args = callback.args.concat(args);
+        callback.fn.apply(calledContext, args);
     };
 
     Event.off = function(eventName, callback) {
@@ -141,4 +132,8 @@
             delete this.__listener[eventName];
         }
     };
+
+    Event.on = Util.buildRestParameter(Event.on);
+    Event.trigger = Util.buildRestParameter(Event.trigger);
+
 }(SJF));
